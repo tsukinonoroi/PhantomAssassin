@@ -1,21 +1,21 @@
 var express = require('express');
 var router = express.Router();
 
-/* pa*/
+/*pa*/
 router.get('/PhantomAssassin', function(req, res, next) {
   res.render('phantom', {
       title: "Phantom Assassin",
-      picture: "images/karamelka.jpg",
-      desc: "fff"
+      picture: "images/phantom1.png",
+      desc: "Phantom Assassin "
   });
 });
 
-/* arcana*/
+/*arcana*/
 router.get('/Arcana', function(req, res, next) {
   res.render('phantom', {
       title: "Phantom Assassin with Arcana-item",
-      picture: "images/karamelka.jpg",
-      desc: "Cgfgg."
+      picture: "images/phantom_arcana.png",
+      desc: "Arcana-item"
   });
 });
 
