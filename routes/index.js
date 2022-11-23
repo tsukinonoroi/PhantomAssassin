@@ -25,7 +25,7 @@ router.get('/Arcana', function(req, res, next) {
   });
 });
 
-/*Phantom alt*/ 
+/*Phantom alternative personality */ 
 router.get('/Alternative', function(req, res, next) {
   res.render('phantom', {
       title: "Alternative Personality ",
