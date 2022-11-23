@@ -1,13 +1,18 @@
-var mongoose = require('mongoose')
+ var mongoose = require('mongoose')
 mongoose.connect('mongodb://127.0.0.1:27017/test')
 
-var pa = mongoose.model('pa', { name: String })
+var schema = mongoose.Schema({ name: String })
 
-var paarc = new pa({ name: 'Аркана' })
+schema.methods.kill = function(){
+    console.log(this.get("name") + " done 'Manifold Paradox' ")
+}
+
+var pa = mongoose.model('pa', schema)
+
+var paarc = new pa({ name: 'ПАшка' })
 paarc.save(function (err) {
-    if (err) {
-        console.log(err)
-    } else {
-        console.log('Я довольна.')
-    }
+    paarc.kill()
 })
+
+
+
