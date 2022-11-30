@@ -4,7 +4,7 @@ var Schema = mongoose.Schema
 
 var phantomSchema = new Schema({
 title: String,
-nick: { 
+nick: {
 type: String,
 unique: true,
 required: true
@@ -16,5 +16,4 @@ type:Date,
 default:Date.now
 }
 })
-module.exports.Phantom = mongoose.model("phantom", phantomSchema)
-
+module.exports.Phantom = mongoose.model("Phantom", phantomSchema)

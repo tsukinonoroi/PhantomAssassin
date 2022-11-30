@@ -9,8 +9,8 @@ async function run() {
         var database = client.db("phantomassassin");
         database.dropDatabase()
         database = client.db("phantomassassin");
-        const heroes = database.collection("heroes");
-        const result = await heroes.insertMany(data);
+        const phantoms = database.collection("phantoms");
+        const result = await phantoms.insertMany(data);
         console.log(`${result.insertedCount} documents were inserted`);
     } finally {
         await client.close();

@@ -1,17 +1,17 @@
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://127.0.0.1/test1')
-var Pa = require("./models/phantom").Pa
+var Phantom = require("../models/phantom").Phantom
 
 
-var pa = new Pa({
-title: "Фантомка",
-nick: "Arcana"
+var phantom = new Phantom({
+title: "Arcana",
+nick: "arcanaaaaa"
 })
 
 
-console.log(Pa)
-pa.save(function(err,Pa,affected){
-console.log(Pa.title)
+console.log(phantom)
+phantom.save(function(err, phantom, affected){
+console.log(phantom.title)
 })
 
 
