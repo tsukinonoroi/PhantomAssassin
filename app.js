@@ -7,10 +7,8 @@ var mongoose = require('mongoose')
 mongoose.connect('mongodb://127.0.0.1:27017/')
 var phantoms = require('./routes/phantoms');
 
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var phantoms = require('./routes/phantoms');
 
 var app = express();
 
@@ -43,9 +41,11 @@ app.use(function(err, req, res, next) {
   // render the error page
   
   res.status(err.status || 500);
-  res.render('error', 
-  {title: 'Такого фантома нет !'
-  })
+  res.render('error',
+  {
+    picture: "../images/error.png",
+    title: 'Ошибка, проверьте корректность запроса.'
+  });
 });
 
 module.exports = app;

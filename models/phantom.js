@@ -2,7 +2,7 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 
-var PaSchema = new Schema({
+var phantomSchema = new Schema({
 title: String,
 nick: { 
 type: String,
@@ -16,5 +16,5 @@ type:Date,
 default:Date.now
 }
 })
-module.exports.Pa = mongoose.model("Pa", PaSchema)
+module.exports.Phantom = mongoose.model("phantom", phantomSchema)
 

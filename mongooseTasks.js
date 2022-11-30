@@ -1,6 +1,6 @@
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://127.0.0.1/test1')
-var Pa = require("./models/Pa").Pa
+var Pa = require("./models/phantom").Pa
 
 
 var pa = new Pa({
