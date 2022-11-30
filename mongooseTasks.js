@@ -1,6 +1,6 @@
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://127.0.0.1/test1')
-var Pa = require("./models/pa").Pa
+var Pa = require("./models/Pa").Pa
 
 
 var pa = new Pa({
@@ -9,9 +9,9 @@ nick: "Arcana"
 })
 
 
-console.log(pa)
-pa.save(function(err,pa,affected){
-console.log(pa.title)
+console.log(Pa)
+pa.save(function(err,Pa,affected){
+console.log(Pa.title)
 })
 
 

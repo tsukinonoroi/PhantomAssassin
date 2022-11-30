@@ -1,6 +1,7 @@
-
 var express = require('express');
 var router = express.Router();
+var Pa = require("../models/Pa").Pa
+
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -9,13 +10,13 @@ router.get('/', function(req, res, next) {
 
 /* Страница Фантомов */
 router.get('/:nick', function(req, res, next) {
-    Car.findOne({nick:req.params.nick}, function(err,phantom){
+    Pa.findOne({nick:req.params.nick}, function(err,Pa){
         if(err) return next(err)
-        if(!phantom) return next(new Error("Такого фантома нет!"))
-        res.render('phantom', {
-            title: phantom.title,
-            picture: phantom.avatar,
-            desc: phantom.desc
+        if(!Pa) return next(new Error("Такого фантома нет!"))
+        res.render('Pa', {
+            title: Pa.title,
+            picture: Pa.avatar,
+            desc: Pa.desc
         })
     })
 })

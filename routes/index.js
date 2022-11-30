@@ -1,13 +1,14 @@
 
 var express = require('express');
 var router = express.Router();
+var Pa = require ("../models/Pa").Pa
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-
-/*Default PA*/ 
+/*
+Default PA
 router.get('/PhantomAssassin', function(req, res, next) {
   res.render('phantom', {
       title: "Phantom Assassin",
@@ -16,7 +17,7 @@ router.get('/PhantomAssassin', function(req, res, next) {
   });
 });
 
-/*Arcana*/ 
+Arcana 
 router.get('/Arcana', function(req, res, next) {
   res.render('phantom', {
       title: "Manifold Paradox",
@@ -25,7 +26,7 @@ router.get('/Arcana', function(req, res, next) {
   });
 });
 
-/*Phantom alternative personality */ 
+Phantom alternative personality 
 router.get('/Alternative', function(req, res, next) {
   res.render('phantom', {
       title: "Alternative Personality ",
@@ -33,7 +34,7 @@ router.get('/Alternative', function(req, res, next) {
       desc: "Асан-изгнанник, втайне взращённый отвергнутыми Сёстрами вуали, всю жизнь стремился к единственной цели: уничтожить ложного пророка, которого его учителя винили в развращении их когда-то святой веры. Одного за другим его стражей забирали кинжалы потаённых убийц, но теперь Асан наконец готов выйти из тени — чтобы исполнить тёмные пожелания своих наставников и воплотить роковые пророчества, вселяющие в оракула ужас."
   });
 });
-
+*/
 module.exports = router;
 
 
