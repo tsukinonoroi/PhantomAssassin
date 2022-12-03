@@ -5,10 +5,10 @@ var async = require("async")
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('Новый маршрутизатор, для маршрутов, начинающихся с cars');
+  res.send('Новый маршрутизатор, для маршрутов, начинающихся с phantoms');
 });
 
-/* Страница машин */
+/* Страница фантомов */
 
 
 router.get('/:nick', function(req, res, next) {
@@ -24,7 +24,7 @@ router.get('/:nick', function(req, res, next) {
             if(err) return next(err)
             var phantom = result[0]
             var phantoms = result[1] || []
-            if(!phantom) return next(new Error("There was no such cаr in MidNightClub, maybe you made a mistake in your request?"))
+            if(!phantom) return next(new Error("Такого фантома нет :("))
             res.render('phantom', {
                 title: phantom.title,
                 picture: phantom.avatar,
