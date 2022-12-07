@@ -17,13 +17,13 @@
     <a class="nav-link" href="/">Главная</a>
     </li>
     </ul>
-    <% menu.forEach(function(phantom){ %>
+
+    <% if(typeof nav == 'object' && nav){ nav.forEach(function(phantom){ %>
         <li class="nav-item">
-        <a class="nav-link" href="/phantoms/<%=phantom.nick%>">
-            <%=phantom.title%> 
-        </a>
+        <a class="nav-link" href="/phantoms/<%=phantom.nick%>"><%=phantom.title%></a>
         </li>
-        <% }) %>
+        <% })} %>
+        
     <ul class="navbar-nav navbar-right">
     <li>
     <a class="nav-link" href="/logreg">Log In</a>

@@ -12,26 +12,16 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/:nick', function(req, res, next) {
-    async.parallel([
-            function(callback){
-                Phantom.findOne({nick:req.params.nick}, callback)
-            },
-            function(callback){
-                Phantom.find({},{_id:0,title:1,nick:1},callback)
-            }
-        ],
-        function(err,result){
-            if(err) return next(err)
-            var phantom = result[0]
-            var phantoms = result[1] || []
-            if(!phantom) return next(new Error("Такого фантома нет :("))
-            res.render('phantom', {
-                title: phantom.title,
-                picture: phantom.avatar,
-                desc: phantom.desc,
-                menu: phantoms
-            });
+    Phantom.findOne({nick:req.params.nick}, function(err,phantom){
+        if(err) return next(err)
+        if(!phantom) return next(new Error("Нет такого фантома :("))
+        res.render('phantom', {
+            title: phantom.title,
+            picture: phantom.avatar,
+            desc: phantom.desc
         })
-  })
+    })
+})
+
   
   module.exports = router
