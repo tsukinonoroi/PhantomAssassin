@@ -2,11 +2,8 @@ var express = require('express')
 var router = express.Router()
 var Phantom = require("../models/phantom").Phantom
 
-/* GET home page. */
 
-router.get('/', function(req, res, next) {
-    res.cookie('greeting', 'Hi!!!').render('index', { title: 'Express', menu:menu });
-});
+
 
 
 router.get('/', function(req, res, next) {
@@ -16,6 +13,15 @@ router.get('/', function(req, res, next) {
                                 menu: menu
                             });
     })
+
+});
+
+
+/* GET home page. */
+
+router.get('/', function(req, res, next) {
+    req.session.greeting = "Hi!!!"
+    res.render('index', { title: 'Express', menu:menu });
 
 });
 
