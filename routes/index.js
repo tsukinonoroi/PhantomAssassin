@@ -3,8 +3,7 @@ var router = express.Router()
 var Phantom = require("../models/phantom").Phantom
 
 
-
-
+/* GET home page. */
 
 router.get('/', function(req, res, next) {
     Phantom.find({},{_id:0,title:1,nick:1},function(err,menu){
@@ -16,12 +15,10 @@ router.get('/', function(req, res, next) {
 
 });
 
-
-/* GET home page. */
-
-router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Express', menu:menu, counter:req.session.counter });
-});
+/* GET login/registration page. */
+router.get('/logreg', function(req, res, next) {
+    res.render('logreg',{title: 'Вход'});
+    });
 
 
 module.exports = router;
