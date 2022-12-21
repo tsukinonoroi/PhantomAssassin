@@ -17,11 +17,6 @@ router.get('/', function(req, res, next) {
 });
 
 
-/* GET auth page. */
-router.get('/logreg', function (req, res, next) {
-  res.render('logreg', { error: null });
-});
-
 /* POST login/registration page. */
 router.post('/logreg', function (req, res, next) {
     var username = req.body.username
@@ -45,6 +40,21 @@ router.post('/logreg', function (req, res, next) {
       }
     })
   });
+
+
+  
+/* GET auth page. */
+router.get('/logreg', function (req, res, next) {
+  res.render('logreg', { error: null });
+});
+
+/* POST logout. */
+router.post('/logout', function(req, res, next) {
+  req.session.destroy()
+  res.locals.user = null
+  res.redirect('/')
+});
+
 
     
 module.exports = router;
