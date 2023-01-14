@@ -9,9 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* Страница фантомов */
-
-
-router.get('/:nick', function(req, res, next) {
+router.get('/:nick', checkAuth,function(req, res, next) {
     Phantom.findOne({nick:req.params.nick}, function(err,phantom){
         if(err) return next(err)
         if(!phantom) return next(new Error("Нет такого фантома :("))
